@@ -44,41 +44,80 @@ title: Início
   <h2>Explorar por temas</h2>
 
   <div class="topics-grid">
-    <a class="topic-card topic-futebol" href="{{ '/futebol.html' | relative_url }}">
+
+    <!-- Futebol -->
+    <div class="topic-card topic-futebol">
       <div class="topic-title">Futebol</div>
       <div class="topic-sub">O futebol que me move.</div>
-      <div class="topic-meta">Flamengo • Cariocas • Crônicas de jogo</div>
-    </a>
 
-    <a class="topic-card topic-esportes" href="{{ '/esportes.html' | relative_url }}">
+      <div class="chip-row">
+        <a class="chip" href="{{ '/futebol/flamengo.html' | relative_url }}">Flamengo</a>
+        <a class="chip" href="{{ '/futebol/cariocas.html' | relative_url }}">Times cariocas</a>
+        <a class="chip" href="{{ '/futebol/jogo.html' | relative_url }}">Crônicas de jogo</a>
+      </div>
+    </div>
+
+    <!-- Esportes -->
+    <div class="topic-card topic-esportes">
       <div class="topic-title">Esportes</div>
       <div class="topic-sub">Existência em jogo além das quatro linhas.</div>
-      <div class="topic-meta">F1 • Skate • Lutas</div>
-    </a>
 
-    <a class="topic-card topic-cotidiano" href="{{ '/cotidiano.html' | relative_url }}">
+      <div class="chip-row">
+        <a class="chip" href="{{ '/esportes/f1.html' | relative_url }}">F1</a>
+        <a class="chip" href="{{ '/esportes/skate.html' | relative_url }}">Skate</a>
+        <a class="chip" href="{{ '/esportes/lutas.html' | relative_url }}">Lutas</a>
+      </div>
+    </div>
+
+    <!-- Cotidiano -->
+    <div class="topic-card topic-cotidiano">
       <div class="topic-title">Cotidiano</div>
       <div class="topic-sub">O dia a dia que insiste em virar crônica.</div>
-      <div class="topic-meta">Professor • Engenheiro • Programador</div>
-    </a>
 
-    <a class="topic-card topic-cultura" href="{{ '/cultura.html' | relative_url }}">
+      <div class="chip-row">
+        <a class="chip" href="{{ '/cotidiano/professor.html' | relative_url }}">Professor</a>
+        <a class="chip" href="{{ '/cotidiano/engenheiro.html' | relative_url }}">Engenheiro</a>
+        <a class="chip" href="{{ '/cotidiano/programador.html' | relative_url }}">Programador</a>
+        <a class="chip" href="{{ '/cotidiano/autista.html' | relative_url }}">Autista</a>
+        <a class="chip" href="{{ '/cotidiano/homem-trans.html' | relative_url }}">Homem trans</a>
+      </div>
+    </div>
+
+    <!-- Cultura -->
+    <div class="topic-card topic-cultura">
       <div class="topic-title">Cultura</div>
-      <div class="topic-sub">Shows, teatro e filmes — o palco que atravessa.</div>
-      <div class="topic-meta">Resenhas • Bastidores • Impressões</div>
-    </a>
+      <div class="topic-sub">Shows, teatro e filmes — o palco que me atravessa.</div>
 
-    <a class="topic-card topic-politica" href="{{ '/politica.html' | relative_url }}">
+      <div class="chip-row">
+        <a class="chip" href="{{ '/cultura/shows.html' | relative_url }}">Shows</a>
+        <a class="chip" href="{{ '/cultura/teatro.html' | relative_url }}">Teatro</a>
+        <a class="chip" href="{{ '/cultura/filmes.html' | relative_url }}">Filmes</a>
+      </div>
+    </div>
+
+    <!-- Política & Atualidades -->
+    <div class="topic-card topic-politica">
       <div class="topic-title">Política & Atualidades</div>
       <div class="topic-sub">Existência em debate.</div>
-      <div class="topic-meta">Leis • Noticiário • Situações</div>
-    </a>
 
-    <a class="topic-card topic-gestao" href="{{ '/gestao.html' | relative_url }}">
+      <div class="chip-row">
+        <a class="chip" href="{{ '/politica/leis.html' | relative_url }}">Leis</a>
+        <a class="chip" href="{{ '/politica/noticiario.html' | relative_url }}">Noticiário</a>
+        <a class="chip" href="{{ '/politica/situacoes.html' | relative_url }}">Situações</a>
+      </div>
+    </div>
+
+    <!-- Gestão & Liderança -->
+    <div class="topic-card topic-gestao">
       <div class="topic-title">Gestão & Liderança</div>
       <div class="topic-sub">Crônicas adaptadas pro LinkedIn.</div>
-      <div class="topic-meta">Trabalho • Liderança • Rotina</div>
-    </a>
+
+      <div class="chip-row">
+        <a class="chip" href="{{ '/gestao/trabalho.html' | relative_url }}">Trabalho</a>
+        <a class="chip" href="{{ '/gestao/lideranca.html' | relative_url }}">Liderança</a>
+        <a class="chip" href="{{ '/gestao/rotina.html' | relative_url }}">Rotina</a>
+      </div>
+    </div>
+
   </div>
 </section>
-
