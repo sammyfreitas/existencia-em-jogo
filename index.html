@@ -42,53 +42,43 @@ title: Início
 
 <section class="sections">
   <h2>Explorar por temas</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Futebol</h3>
-      <p class="card-tagline">O futebol que me move.</p>
-      <ul>
-        <li><a href="{{ '/futebol.html' | relative_url }}">Crônicas de futebol</a></li>
-      </ul>
-    </div>
 
-    <div class="card">
-      <h3>Esportes</h3>
-      <p class="card-tagline">Existência em jogo além das quatro linhas.</p>
-      <ul>
-        <li><a href="{{ '/esportes.html' | relative_url }}">F1, skate, lutas e mais</a></li>
-      </ul>
-    </div>
+  <div class="topics-grid">
+    <a class="topic-card topic-futebol" href="{{ '/futebol.html' | relative_url }}">
+      <div class="topic-title">Futebol</div>
+      <div class="topic-sub">O futebol que me move.</div>
+      <div class="topic-meta">Flamengo • Cariocas • Crônicas de jogo</div>
+    </a>
 
-    <div class="card">
-      <h3>Cotidiano</h3>
-      <p class="card-tagline">O dia a dia que insiste em virar crônica.</p>
-      <ul>
-        <li><a href="{{ '/cotidiano.html' | relative_url }}">Professor, engenheiro, programador, carioca, homem trans, autista…</a></li>
-      </ul>
-    </div>
+    <a class="topic-card topic-esportes" href="{{ '/esportes.html' | relative_url }}">
+      <div class="topic-title">Esportes</div>
+      <div class="topic-sub">Existência em jogo além das quatro linhas.</div>
+      <div class="topic-meta">F1 • Skate • Lutas</div>
+    </a>
 
-    <div class="card">
-      <h3>Cultura</h3>
-      <p class="card-tagline">Shows, teatro, filmes — o palco que me atravessa.</p>
-      <ul>
-        <li><a href="{{ '/cultura.html' | relative_url }}">Crônicas e resenhas</a></li>
-      </ul>
-    </div>
+    <a class="topic-card topic-cotidiano" href="{{ '/cotidiano.html' | relative_url }}">
+      <div class="topic-title">Cotidiano</div>
+      <div class="topic-sub">O dia a dia que insiste em virar crônica.</div>
+      <div class="topic-meta">Professor • Engenheiro • Programador</div>
+    </a>
 
-    <div class="card">
-      <h3>Política & Atualidades</h3>
-      <p class="card-tagline">Existência em debate.</p>
-      <ul>
-        <li><a href="{{ '/politica.html' | relative_url }}">Leis, notícias, situações do noticiário</a></li>
-      </ul>
-    </div>
+    <a class="topic-card topic-cultura" href="{{ '/cultura.html' | relative_url }}">
+      <div class="topic-title">Cultura</div>
+      <div class="topic-sub">Shows, teatro e filmes — o palco que atravessa.</div>
+      <div class="topic-meta">Resenhas • Bastidores • Impressões</div>
+    </a>
 
-    <div class="card">
-      <h3>Gestão & Trabalho</h3>
-      <p class="card-tagline">Crônicas adaptadas para liderança e LinkedIn.</p>
-      <ul>
-        <li><a href="{{ '/gestao.html' | relative_url }}">Gestão, liderança, bastidores do trabalho</a></li>
-      </ul>
-    </div>
+    <a class="topic-card topic-politica" href="{{ '/politica.html' | relative_url }}">
+      <div class="topic-title">Política & Atualidades</div>
+      <div class="topic-sub">Existência em debate.</div>
+      <div class="topic-meta">Leis • Noticiário • Situações</div>
+    </a>
+
+    <a class="topic-card topic-gestao" href="{{ '/gestao.html' | relative_url }}">
+      <div class="topic-title">Gestão & Liderança</div>
+      <div class="topic-sub">Crônicas adaptadas pro LinkedIn.</div>
+      <div class="topic-meta">Trabalho • Liderança • Rotina</div>
+    </a>
   </div>
 </section>
+
