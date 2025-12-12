@@ -223,3 +223,52 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.topic-card {
+  display: block;
+  padding: 16px 16px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-card);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  text-decoration: none;
+}
+
+.topic-title {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.topic-sub {
+  color: var(--text-main);
+  opacity: 0.9;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.topic-meta {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+/* Pastéis coloridos por tema (sem ficar infantil) */
+.topic-futebol { background: #fff1f2; border-color: #fecdd3; }
+.topic-esportes { background: #eff6ff; border-color: #bfdbfe; }
+.topic-cotidiano { background: #f0fdf4; border-color: #bbf7d0; }
+.topic-cultura { background: #faf5ff; border-color: #e9d5ff; }
+.topic-politica { background: #fffbeb; border-color: #fde68a; }
+.topic-gestao { background: #f5f3ff; border-color: #ddd6fe; }
