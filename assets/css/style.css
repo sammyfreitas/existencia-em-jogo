@@ -265,10 +265,66 @@ a:hover {
   color: var(--text-soft);
 }
 
-/* Pastéis coloridos por tema (sem ficar infantil) */
+/* Grid dos cards grandes */
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+/* Card grande */
+.topic-card {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.topic-title {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.topic-sub {
+  margin-bottom: 12px;
+  color: var(--text-main);
+  opacity: 0.9;
+  line-height: 1.35;
+}
+
+/* Linha dos chips */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Subcaixinhas (chips) */
+.chip {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+  text-decoration: none;
+}
+
+/* Pastéis por tema */
 .topic-futebol { background: #fff1f2; border-color: #fecdd3; }
 .topic-esportes { background: #eff6ff; border-color: #bfdbfe; }
 .topic-cotidiano { background: #f0fdf4; border-color: #bbf7d0; }
 .topic-cultura { background: #faf5ff; border-color: #e9d5ff; }
 .topic-politica { background: #fffbeb; border-color: #fde68a; }
 .topic-gestao { background: #f5f3ff; border-color: #ddd6fe; }
+
