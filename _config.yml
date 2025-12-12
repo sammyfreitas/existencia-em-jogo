@@ -1,0 +1,18 @@
+title: "Existência em Jogo"
+description: "Crônicas sobre o que me move: futebol, cotidiano, cultura, política, ensino, tecnologia e tudo que atravessa a vida."
+baseurl: ""
+url: "https://SEU-USUARIO.github.io"
+
+theme: minima
+markdown: kramdown
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

@@ -1,0 +1,94 @@
+---
+layout: default
+title: Início
+---
+
+<section class="hero">
+  <div class="hero-eyebrow">Projeto</div>
+  <h2>Existência em Jogo</h2>
+  <p>Crônicas sobre o que me move: do Maracanã à sala de aula, do código à arquibancada, do noticiário ao gato em cima do teclado.</p>
+</section>
+
+<section>
+  <h2>Últimas crônicas</h2>
+
+  <div class="carousel" id="cronicas-carousel">
+    <button class="carousel-btn prev">‹</button>
+
+    <div class="carousel-track">
+      {% assign latest_posts = site.posts | sort: 'date' | reverse | slice: 0, 10 %}
+      {% for post in latest_posts %}
+        <article class="carousel-item">
+          {% if post.series %}
+            <div class="series-badge">
+              Série: {{ post.series }}
+            </div>
+          {% endif %}
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="meta">
+            {{ post.date | date: "%d/%m/%Y" }} ·
+            {% if post.categories.size > 0 %}
+              {{ post.categories | join: " / " }}
+            {% endif %}
+          </p>
+          <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+        </article>
+      {% endfor %}
+    </div>
+
+    <button class="carousel-btn next">›</button>
+  </div>
+</section>
+
+<section class="sections">
+  <h2>Explorar por temas</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Futebol</h3>
+      <p class="card-tagline">O futebol que me move.</p>
+      <ul>
+        <li><a href="{{ '/futebol.html' | relative_url }}">Crônicas de futebol</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Esportes</h3>
+      <p class="card-tagline">Existência em jogo além das quatro linhas.</p>
+      <ul>
+        <li><a href="{{ '/esportes.html' | relative_url }}">F1, skate, lutas e mais</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Cotidiano</h3>
+      <p class="card-tagline">O dia a dia que insiste em virar crônica.</p>
+      <ul>
+        <li><a href="{{ '/cotidiano.html' | relative_url }}">Professor, engenheiro, programador, carioca, homem trans, autista…</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Cultura</h3>
+      <p class="card-tagline">Shows, teatro, filmes — o palco que me atravessa.</p>
+      <ul>
+        <li><a href="{{ '/cultura.html' | relative_url }}">Crônicas e resenhas</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Política & Atualidades</h3>
+      <p class="card-tagline">Existência em debate.</p>
+      <ul>
+        <li><a href="{{ '/politica.html' | relative_url }}">Leis, notícias, situações do noticiário</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Gestão & Trabalho</h3>
+      <p class="card-tagline">Crônicas adaptadas para liderança e LinkedIn.</p>
+      <ul>
+        <li><a href="{{ '/gestao.html' | relative_url }}">Gestão, liderança, bastidores do trabalho</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
