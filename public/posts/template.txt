@@ -1,0 +1,10 @@
+---
+title: "Título da crônica"
+date: 2024-12-10
+categories: [futebol, flamengo]
+tags: [cronica]
+image: /assets/img/placeholder.jpg
+series: "O Futebol que Me Move"
+---
+
+Texto da crônica aqui.

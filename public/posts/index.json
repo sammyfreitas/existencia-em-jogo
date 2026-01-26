@@ -1,0 +1,15 @@
+[
+  {
+    "id": "2026-01-26-exemplo",
+    "title": "Existência em Jogo: o começo",
+    "date": "2026-01-26",
+    "cover": "/existencia-em-jogo/images/placeholder.svg",
+    "_cover": "/existencia-em-jogo/images/posts/2026-01-26-exemplo.jpg Padrão 1200x630",
+    "excerpt": "Entre um bug teimoso e um café que esfria rápido, nasce a primeira crônica do portal.",
+    "categories": ["cotidiano"],
+    "tags": ["cronica", "autista", "programador"],
+    "series": "A Crônica que Me Move",
+    "slug": "2026-01-26-exemplo",
+    "file": "/existencia-em-jogo/posts/2026-01-26-exemplo.md"
+  }
+]
