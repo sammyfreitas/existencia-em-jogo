@@ -389,27 +389,23 @@ a:hover{ text-decoration:underline; }
 .topicCard{
   position: relative;
   overflow: hidden;
+
   padding:16px;
   border-radius:16px;
   border:1px solid var(--border);
   box-shadow:0 1px 3px rgba(0,0,0,.06);
-  z-index: 1;
 }
-
-
-   ✅ correto: background-image: var(--topic-bg); */
-
-
+/*✅ correto: background-image: var(--topic-bg); */
 /* camada para legibilidade */
-/* véu pastel (deixa cor aparecer e ainda dá legibilidade) */
+
 .topicCard::after{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(135deg, rgba(255,255,255,.54), rgba(255,255,255,.34));
+  background: linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,255,255,.74));
 }
 
-
+.topicCard > *{ position: relative; z-index: 1; }
 
 .topicTitle{ font-weight:900; margin-bottom:6px; }
 .topicSub{ color:var(--muted); margin-bottom:12px; line-height:1.35; }
@@ -662,7 +658,6 @@ a:hover{ text-decoration:underline; }
   /* 2 linhas no máximo */
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
