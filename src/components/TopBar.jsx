@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SocialLinks from "./SocialLinks.jsx";
+import TodayBadge from "./TodayBadge.jsx"; 
 
 export default function TopBar({ onMenu, onSearchSubmit, title, tagline }) {
     const [q, setQ] = useState("");
@@ -20,7 +21,7 @@ export default function TopBar({ onMenu, onSearchSubmit, title, tagline }) {
                 <div className="brandTitle">{title}</div>
                 <div className="brandTag">{tagline}</div>
             </div>
-
+            <TodayBadge />
             <form className="topSearch" onSubmit={submit} role="search">
                 <input
                     className="topSearchInput"

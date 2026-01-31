@@ -39,7 +39,11 @@ export default function App() {
 
           <footer className="footer">
               <div style={{ display: "flex", gap: 12, justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
-                  <img src="/existencia-em-jogo/images/teclabs.svg" alt="TecLabs" style={{ height: 28 }} />
+                  <img
+                      src={`${import.meta.env.BASE_URL}images/teclabs.svg`}
+                      alt="TecLabs"
+                      style={{ height: 28 }}
+                  />
                   <div>
                       <strong>Existência em Jogo</strong><br />
                       Desenvolvido por <strong>Anthony Samuel Sobral De Freitas</strong>, jornalista, escritor, engenheiro, professor frontend e backend, 2026.

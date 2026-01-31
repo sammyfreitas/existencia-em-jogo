@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { marked } from "marked";
+import { resolveCover } from "../lib/cover.js";
 
 export default function Post({ posts }) {
   const { slug } = useParams();
@@ -12,7 +13,9 @@ export default function Post({ posts }) {
     let alive = true;
     async function run() {
       if (!post) return;
-      const res = await fetch(post.file);
+
+      const url = `${import.meta.env.BASE_URL}${post.file}`;
+      const res = await fetch(url);
       const md = await res.text();
       const rendered = marked.parse(md);
       if (alive) setHtml(rendered);
@@ -37,7 +40,7 @@ export default function Post({ posts }) {
         <div className="meta">{post.date} · {post.categories?.join(" / ")}</div>
       </div>
 
-      <img className="postCover" src={post.cover} alt={post.title} />
+      <img className="postCover" src={resolveCover(post)} alt={post.title} />
 
       <div className="postContent" dangerouslySetInnerHTML={{ __html: html }} />
     </div>

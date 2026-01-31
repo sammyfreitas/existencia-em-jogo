@@ -13,6 +13,7 @@ export default function SideMenu({ open, onClose }) {
 
         <Link to="/" onClick={onClose}>Início</Link>
         <Link to="/tema/futebol" onClick={onClose}>Futebol</Link>
+        <Link to="/tema/brasileirao" onClick={onClose}>Tabela do Brasileirão</Link>
         <Link to="/tema/esportes" onClick={onClose}>Esportes</Link>
         <Link to="/tema/cotidiano" onClick={onClose}>Cotidiano</Link>
         <Link to="/tema/cultura" onClick={onClose}>Cultura</Link>

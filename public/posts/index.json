@@ -1,15 +1,99 @@
 [
   {
     "id": "2026-01-26-exemplo",
+    "slug": "2026-01-26-exemplo",
     "title": "Existência em Jogo: o começo",
     "date": "2026-01-26",
-    "cover": "/existencia-em-jogo/images/placeholder.svg",
-    "_cover": "/existencia-em-jogo/images/posts/2026-01-26-exemplo.jpg Padrão 1200x630",
-    "excerpt": "Entre um bug teimoso e um café que esfria rápido, nasce a primeira crônica do portal.",
     "categories": ["cotidiano"],
     "tags": ["cronica", "autista", "programador"],
     "series": "A Crônica que Me Move",
-    "slug": "2026-01-26-exemplo",
-    "file": "/existencia-em-jogo/posts/2026-01-26-exemplo.md"
+    "cover": "images/placeholder.svg",
+    "_cover": "/existencia-em-jogo/images/posts/2026-01-26-exemplo.jpg Padrão 1200x630",
+    "file": "posts/2026-01-26-exemplo.md",
+    "excerpt": "Entre um bug teimoso e um café que esfria rápido, nasce a primeira crônica do portal."
+  },
+  {
+    "id": "2025-12-10-ascendente-em-segredo",
+    "slug": "ascendente-em-segredo",
+    "title": "Ascendente em Segredo",
+    "date": "2025-12-10",
+    "categories": ["cotidiano", "namoro", "astrologia"],
+    "tags": ["cronica"],
+    "series": "A astrologia que Me Move",
+    "cover": "images/placeholders/cotidiano.svg",
+    "file": "posts/2025-12-10-ascendente-em-segredo.md",
+    "excerpt": "Ela acreditava em mapa astral como quem acredita em senha de wi-fi: sem aquilo, nada conectava direito."
+  },
+  {
+     "id": "2025-12-31-adeus-x-a-deus",
+    "slug": "adeus-x-a-deus",
+    "title": "Adeus x A Deus",
+    "date": "2025-12-31",
+    "categories": ["cotidiano"],
+    "tags": ["cronica"],
+    "series": "A vida que Me Move",
+    "cover": "images/placeholders/cotidiano.svg",
+    "file": "posts/2025-12-31-adeus-x-a-deus.md",
+    "excerpt": "Adeus ao que era, e a Deus, o que é."
+  },  
+  {
+     "id": "2025-12-07-colonizacao-2-fifa-caravela-var",
+    "slug": "colonizacao-2-fifa-caravela-var",
+    "title": "COLONIZAÇÃO 2.0: OU COMO A FIFA INVENTOU A CARAVELA COM VAR",
+    "date": "2025-12-07",
+    "categories": ["futebol", "flamengo"],
+    "tags": ["cronica"],
+    "series": "O futebol que Me Move",
+    "cover": "images/placeholders/futebol.svg",
+    "file": "posts/2025-12-07-colonizacao-2-fifa-caravela-var.md",
+    "excerpt": "A FIFA, em sua eterna busca por controle e padronização, criou uma nova era no futebol: a colonização 2.0, onde a tecnologia VAR se tornou a caravela moderna."
+  },
+  {
+     "id": "2025-11-29-o-gol-que-veio-vestido-de-verde",
+    "slug": "o-gol-que-veio-vestido-de-verde",
+    "title": "O Gol Que Veio Vestido de Verde",
+    "date": "2025-11-29",
+    "categories": ["futebol", "flamengo"],
+    "tags": ["cronica"],
+    "series": "O futebol que Me Move",
+    "cover": "images/placeholders/futebol.svg",
+    "file": "posts/2025-11-29-o-gol-que-veio-vestido-de-verde.md",
+    "excerpt": "Em uma noite mágica no Maracanã, o Flamengo conquistou um gol inesquecível, vestido de verde, que ficará para sempre na memória dos torcedores."
+  },
+  {
+     "id": "2025-11-26-flamengo-x-atletico-mineiro",
+    "slug": "flamengo-x-atletico-mineiro",
+    "title": "Flamengo x Atlético Mineiro",
+    "date": "2025-11-26",
+    "categories": ["futebol", "flamengo"],
+    "tags": ["cronica"],
+    "series": "O Futebol que Me Move",
+    "cover": "images/placeholders/futebol.svg",
+    "file": "posts/2025-11-25-flaXgalo.md",
+    "excerpt": "Uma análise detalhada do confronto épico entre Flamengo e Atlético Mineiro, destacando os momentos decisivos e as estratégias de ambos os times."
+  },
+  {
+     "id": "2025-11-20-flamengo-x-fluminese",
+    "slug": "flamengo-x-fluminese",
+    "title": "Flamengo x Fluminese",
+    "date": "2025-11-20",
+    "categories": ["futebol", "flamengo"],
+    "tags": ["cronica"],
+    "series": "O Futebol que Me Move",
+    "cover": "images/placeholders/futebol.svg",
+    "file": "posts/2025-11-20-flaXflu.md",
+    "excerpt": "Um relato vibrante do clássico entre Flamengo e Fluminense, destacando as emoções e reviravoltas que marcaram o jogo."
+  },
+  {
+     "id": "2025-09-16-a-curva-de-48g",
+    "slug": "a-curva-de-48g", 
+    "title": "A curva de 48º",
+    "date": "2025-09-16",
+    "categories": ["cotidiano", "autista"],
+    "tags": ["cronica"],
+    "series": "A vida que Me Move",
+    "cover": "images/placeholders/cotidiano.svg",
+    "file": "posts/2025-09-16-a-curva-de-48g.md",
+    "excerpt": "Uma reflexão sobre a curva de 48º no ônibus e como pequenas mudanças podem impactar a vida de uma pessoa autista."
   }
 ]

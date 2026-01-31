@@ -1,3 +1,6 @@
+/* =========================================================
+   00) VARIÁVEIS E RESET
+   ========================================================= */
 :root{
   --bg:#f3f4f6;
   --card:#ffffff;
@@ -5,92 +8,174 @@
   --muted:#6b7280;
   --accent:#d7263d;
   --border:#e5e7eb;
+  --ui-scale: 0.92; /* 1 = normal, 0.92 = menor */
+  /* layout */
+  --pageMax: 1440px; /* era 1200 */
+  --gap: 18px;
 }
 
+
+
+
 *{ box-sizing:border-box; }
-body{ margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--ink); }
+body{
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:var(--bg);
+  color:var(--ink);
+  font-size: calc(16px * var(--ui-scale));
+}
 a{ color:inherit; text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
+/* =========================================================
+   01) SHELL / CONTAINER
+   (ajusta o "card muito para esquerda")
+   ========================================================= */
 .appShell{ min-height:100vh; display:flex; flex-direction:column; }
-.main{ width:min(1100px, 92vw); margin: 18px auto; flex:1; }
+.main{
+  width: min(1440px, 96vw);
+  margin: 18px auto;
+  flex:1;
+}
+
+/* A page precisa centralizar e dar padding */
+.page{
+  max-width: var(--pageMax);
+  margin: 0 auto;
+  padding: 18px 18px 30px;
+}
 .page h1,h2{ margin: 0 0 12px; }
 
+/* =========================================================
+   02) TOPBAR (mantém preto/azul escuro)
+   ========================================================= */
 .topbar{
-  position:sticky; top:0; z-index:10;
-  background:#111827; color:#f9fafb;
-  display:flex; align-items:center; gap:12px;
+  position:sticky;
+  top:0;
+  z-index:10;
+
+  background:#111827;
+  color:#f9fafb;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
   padding:12px 14px;
 }
+
 .brand{ flex:1; text-align:center; }
 .brandTitle{ font-weight:800; letter-spacing:0.06em; text-transform:uppercase; }
 .brandTag{ font-size:.82rem; color:#d1d5db; margin-top:2px; }
 
 .iconBtn{
-  background:transparent; border:none; color:#f9fafb;
-  font-size:1.1rem; cursor:pointer;
-  padding:6px 10px; border-radius:10px;
+  background:transparent;
+  border:none;
+  color:#f9fafb;
+  font-size:1.1rem;
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:10px;
 }
 .iconBtn:hover{ background:rgba(255,255,255,.08); text-decoration:none; }
 
+/* busca no topo */
+.topSearch{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex: 1;
+  max-width: 520px;
+  justify-content: flex-end;
+}
+.topSearchInput{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
+  color: #f9fafb;
+  outline: none;
+}
+.topSearchInput::placeholder{ color: #d1d5db; }
+
+.todayBadge{
+  font-size: .9rem;
+  opacity: .9;
+  color: #e5e7eb;
+}
+
+/* redes sociais no topo */
+.socialLinks{
+  display:flex;
+  gap:10px;
+  margin-left: 10px;
+}
+.socialIcon{
+  color:#f9fafb;
+  opacity: .9;
+  padding:6px 8px;
+  border-radius: 10px;
+}
+.socialIcon:hover{
+  opacity: 1;
+  background: rgba(255,255,255,.08);
+  text-decoration:none;
+}
+
+/* =========================================================
+   03) HERO (você pediu para NÃO mudar o topo)
+   ========================================================= */
 .hero{
-  background:var(--card);
   border:1px solid var(--border);
   border-radius:16px;
-  padding:18px;
-  box-shadow:0 1px 3px rgba(0,0,0,.06);
-  margin-bottom:18px;
+  background: var(--card);
+  padding: 18px;
 }
-.heroEyebrow{ font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+.heroEyebrow{
+  font-size:.78rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
 
-.portalTop{
+/* =========================================================
+   04) LAYOUT HOME (esquerda conteúdo / direita widgets)
+   (resolve widgets empurrando temas)
+   ========================================================= */
+.homeGrid{
   display:grid;
-  grid-template-columns: 1.6fr .9fr;
-  gap:16px;
-  align-items:start;
-  margin-bottom:18px;
-}
-@media (max-width: 900px){
-  .portalTop{ grid-template-columns: 1fr; }
+  grid-template-columns: minmax(0, 1fr) 420px; /* era 360 */
+  gap: 20px;
+  align-items: start;
+  margin-top: 14px;
 }
 
-.widget{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:14px;
-  box-shadow:0 1px 3px rgba(0,0,0,.06);
-  margin-bottom:12px;
-}
-.widgetTitle{ font-weight:800; margin-bottom:6px; }
-.muted{ color:var(--muted); }
+.homeLeft{ min-width: 0; }
 
-.badge{
-  display:inline-block;
-  background:var(--accent);
-  color:#fff;
-  border-radius:999px;
-  padding:4px 10px;
-  font-size:.75rem;
+.homeRight{
+  position: sticky;
+  top: 86px; /* ajuste se o header for maior/menor */
+  display:flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
 }
 
-.postCard{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 1px 3px rgba(0,0,0,.06);
+@media (max-width: 980px){
+  .homeGrid{ grid-template-columns: 1fr; }
+  .homeRight{ position: static; }
 }
-.postCard img{ width:100%; height:180px; object-fit:cover; display:block; }
-.postCardBody{ padding:12px; }
-.postCard h3{ margin:8px 0 6px; }
-.postCard p{ margin:0 0 10px; color:var(--muted); }
-.meta{ font-size:.85rem; color:var(--muted); }
 
-.postCard.featured img{ height:340px; }
-.postCard.compact img{ height:120px; }
-.postCard.compact h3{ font-size:1rem; }
+/* =========================================================
+   05) PORTAL TOP (featured + secundários)
+   ========================================================= */
+.portalTop{
+  display:block;
+}
 
+/* cards secundários */
 .secondaryRow{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,27 +186,243 @@ a:hover{ text-decoration:underline; }
   .secondaryRow{ grid-template-columns: 1fr; }
 }
 
+/* =========================================================
+   06) WIDGET (base)
+   ========================================================= */
+.widget{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
+  overflow: hidden; /* evita vazamentos (horóscopo) */
+}
+
+.widgetTitle{ font-weight:800; margin-bottom:6px; }
+.muted{ color:var(--muted); }
+
+/* =========================================================
+   07) WEATHER WIDGET (com cores)
+   ========================================================= */
+.widget.weather{
+  color: #fff;
+  border: 0;
+  position: relative;
+}
+
+.weatherBody{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:8px;
+}
+.weatherIcon{
+  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.14);
+  border-radius: 14px;
+}
+.weatherTemp{ font-weight: 950; font-size: 1.5rem; line-height: 1; }
+.weatherDesc{ font-weight: 800; margin-top: 4px; opacity: .95; }
+.weatherFeels{ margin-top: 6px; opacity: .9; font-size: .9rem; }
+.weatherFoot{ margin-top: 10px; font-size: .82rem; opacity: .85; }
+
+/* temas (gradientes) */
+.weather.sun{ background: linear-gradient(135deg, #f59e0b, #ef4444); }
+.weather.cloud-sun{ background: linear-gradient(135deg, #0ea5e9, #2563eb); }
+.weather.fog{ background: linear-gradient(135deg, #64748b, #334155); }
+.weather.rain{ background: linear-gradient(135deg, #0f172a, #2563eb); }
+.weather.storm{ background: linear-gradient(135deg, #111827, #7c3aed); }
+.weather.neutral{ background: linear-gradient(135deg, #111827, #374151); }
+
+/* =========================================================
+   08) HORÓSCOPO (grid + tooltip, sem vazar)
+   ========================================================= */
+.signGrid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:10px;
+  margin-top:10px;
+}
+
+@media (max-width: 520px){
+  .signGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.signBtn{
+  min-width: 0;
+  width: 100%;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:14px;
+  padding:10px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.signBtn:hover{ background:#f9fafb; }
+.signBtn.active{ border-color: var(--accent); }
+
+.signIcon{
+  width:36px; height:36px;
+  display:flex; align-items:center; justify-content:center;
+  background:#111827;
+  color:#fff;
+  border-radius:12px;
+  font-size:1.2rem;
+}
+
+.signName{ font-weight:800; font-size:.95rem; }
+
+.signTooltip{
+  margin-top:12px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:14px;
+  padding:12px;
+}
+.signTooltipTitle{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+.vibeLine{
+  font-weight: 800;
+  color: #111827;
+  background: #f3f4f6;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* botões extras do horóscopo */
+.actionsRow{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap: wrap;
+}
+.smallBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 10px;
+  border-radius: 10px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-weight:800;
+  font-size:.85rem;
+  text-decoration:none;
+  color:#111827;
+}
+.smallBtn:hover{ background:#f9fafb; }
+
+/* =========================================================
+   09) POSTS (cards)
+   ========================================================= */
+.postCard{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+
+.postCard img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+
+.postCardBody{ padding:12px; }
+.postCard h3{ margin:8px 0 6px; }
+.postCard p{ margin:0 0 10px; color:var(--muted); }
+.meta{ font-size:.85rem; color:var(--muted); }
+
+/* featured card: você pediu para ficar VERDE (não tão escuro)
+   sem mexer no topo, só no card grande do post */
+.postCard.featured{
+  border-color: rgba(16,185,129,.30);
+  background: linear-gradient(180deg, rgba(16,185,129,.10), rgba(16,185,129,.18));
+}
+
+/* imagem do featured estava MUITO alta e "puxando pra esquerda" visualmente
+   deixa mais controlado */
+.postCard.featured img{ height:260px; }
+
+.postCard.compact img{ height:120px; }
+.postCard.compact h3{ font-size:1rem; }
+
+/* grid de cards */
 .grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap:14px;
 }
 
+/* =========================================================
+   10) LATEST INLINE (subiu antes dos temas)
+   ========================================================= */
+.latestInline{ margin-top: 16px; }
+
+/* =========================================================
+   11) TEMAS (cards pastel + imagem de fundo por tema)
+   ========================================================= */
 .themes{ margin-top: 8px; }
+
 .topicsGrid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap:14px;
 }
+
+/* base do tema */
 .topicCard{
+  position: relative;
+  overflow: hidden;
   padding:16px;
   border-radius:16px;
   border:1px solid var(--border);
   box-shadow:0 1px 3px rgba(0,0,0,.06);
+  z-index: 1;
 }
+
+
+   ✅ correto: background-image: var(--topic-bg); */
+
+
+/* camada para legibilidade */
+/* véu pastel (deixa cor aparecer e ainda dá legibilidade) */
+.topicCard::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(135deg, rgba(255,255,255,.54), rgba(255,255,255,.34));
+}
+
+
+
 .topicTitle{ font-weight:900; margin-bottom:6px; }
 .topicSub{ color:var(--muted); margin-bottom:12px; line-height:1.35; }
 
+/* cores pastel voltando */
+.topicFutebol{ background:lightgreen; border-color:darkolivegreen; }
+.topicEsportes{ background:lightskyblue; border-color:darkturquoise;}
+.topicCotidiano{ background:lightblue; border-color:darkcyan; }
+.topicCultura{ background:lightsalmon; border-color:darkmagenta; }
+.topicPolitica{ background:lightcoral; border-color:darkred; }
+.topicGestao{ background:lightseagreen; border-color:darkolivegreen; }
+
+/* chips */
 .chipRow{ display:flex; flex-wrap:wrap; gap:10px; }
 .chip{
   display:inline-block;
@@ -133,6 +434,7 @@ a:hover{ text-decoration:underline; }
 }
 .chip:hover{ text-decoration:none; transform: translateY(-1px); }
 
+/* tons pastel (mantém sua identidade atual) */
 .topicFutebol{ background:#fff1f2; border-color:#fecdd3; }
 .topicEsportes{ background:#eff6ff; border-color:#bfdbfe; }
 .topicCotidiano{ background:#f0fdf4; border-color:#bbf7d0; }
@@ -140,6 +442,9 @@ a:hover{ text-decoration:underline; }
 .topicPolitica{ background:#fffbeb; border-color:#fde68a; }
 .topicGestao{ background:#f5f3ff; border-color:#ddd6fe; }
 
+/* =========================================================
+   12) FOOTER
+   ========================================================= */
 .footer{
   padding:18px 14px;
   text-align:center;
@@ -149,15 +454,20 @@ a:hover{ text-decoration:underline; }
 .footer a{ color:#fff; text-decoration:underline; }
 .footerSmall{ margin-top:6px; font-size:.85rem; color:#d1d5db; }
 
-/* Side menu */
+/* =========================================================
+   13) SIDE MENU
+   ========================================================= */
 .sideWrap{
-  position:fixed; inset:0;
+  position:fixed;
+  inset:0;
   background:rgba(0,0,0,.35);
-  opacity:0; pointer-events:none;
+  opacity:0;
+  pointer-events:none;
   transition:opacity .14s ease;
   z-index:20;
 }
 .sideWrap.open{ opacity:1; pointer-events:auto; }
+
 .sideMenu{
   width:min(320px, 86vw);
   height:100%;
@@ -171,11 +481,16 @@ a:hover{ text-decoration:underline; }
 .sideMenu a:hover{ background:#f3f4f6; text-decoration:none; }
 .sideHeader{ display:flex; align-items:center; justify-content:space-between; }
 
-/* Search modal */
+/* =========================================================
+   14) SEARCH MODAL
+   ========================================================= */
 .modalWrap{
-  position:fixed; inset:0;
+  position:fixed;
+  inset:0;
   background:rgba(0,0,0,.35);
-  display:flex; align-items:flex-start; justify-content:center;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
   padding-top:70px;
   z-index:30;
 }
@@ -186,7 +501,12 @@ a:hover{ text-decoration:underline; }
   border:1px solid var(--border);
   padding:14px;
 }
-.modalHeader{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.modalHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
 .searchInput{
   width:100%;
   padding:12px 12px;
@@ -200,6 +520,9 @@ a:hover{ text-decoration:underline; }
 .searchTitle{ font-weight:800; }
 .searchMeta{ font-size:.85rem; color:var(--muted); }
 
+/* =========================================================
+   15) POST PAGE
+   ========================================================= */
 .postPage .postCover{
   width:100%;
   height:320px;
@@ -216,42 +539,161 @@ a:hover{ text-decoration:underline; }
   line-height:1.7;
 }
 
-.topSearch{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  flex: 1;
-  max-width: 520px;
-  justify-content: flex-end;
+/* =========================
+   POSTCARD - AJUSTE FINAL
+   ========================= */
+
+/* deixa o featured mais "portal": menos alto, mais elegante */
+.postCard.featured img{
+  height: 220px;           /* era 260/340 em versões anteriores */
+  object-position: center; /* garante corte central */
 }
 
-.topSearchInput{
-  width: 100%;
-  padding: 10px 12px;
+/* no featured, deixa o texto respirar */
+.postCard.featured .postCardBody{
+  padding: 14px 14px 16px;
+}
+
+/* evita que o link aplique underline em tudo ao hover */
+.postCard a:hover{
+  text-decoration: none;
+}
+
+/* título e excerpt alinhados */
+.postCard h3{
+  line-height: 1.15;
+}
+.postCard p{
+  line-height: 1.35;
+}
+
+/* =========================
+   HORÓSCOPO - FIX DE OVERFLOW
+   ========================= */
+
+.signBtn{
+  min-width: 0;
+  overflow: hidden;
+}
+
+.signName{
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* não quebra e não vaza */
+}
+
+/* em telas menores, permite quebrar em 2 linhas ao invés de cortar */
+@media (max-width: 520px){
+  .signName{
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
+/* =========================
+   FIX SIGNOS: caber o nome
+   ========================= */
+
+.signBtn{
+  align-items: center;
+}
+
+.signName{
+  font-weight: 800;
+  font-size: .92rem;     /* ligeiramente menor */
+  line-height: 1.05;
+
+  /* ✅ permitir 2 linhas ao invés de cortar */
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* no máx 2 linhas */
+  -webkit-box-orient: vertical;
+}
+
+/* em telas pequenas, mais compacto ainda */
+@media (max-width: 520px){
+  .signName{ font-size: .9rem; }
+}
+
+/* SIGNOS: 2 linhas e sem vazar */
+.signName{
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.05;
+  font-size: .6rem;
+}
+
+/* =========================
+   HORÓSCOPO - botão em COLUNA
+   ícone em cima, nome embaixo
+   ========================= */
+.signBtn{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  gap: 8px;
+  padding: 10px 8px;
+}
+
+.signIcon{
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.08);
-  color: #f9fafb;
-  outline: none;
+  font-size: 1.25rem;
 }
 
-.topSearchInput::placeholder{ color: #d1d5db; }
+.signName{
+  font-size: .85rem;
+  line-height: 1.05;
 
-.socialLinks{
-  display:flex;
-  gap:10px;
-  margin-left: 10px;
+  /* não cortar */
+  white-space: normal;
+  overflow: visible;
+
+  /* 2 linhas no máximo */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
-.socialIcon{
-  color:#f9fafb;
-  opacity: .9;
-  padding:6px 8px;
-  border-radius: 10px;
+.hero h2{ font-size: 1.45rem; }
+.page h2{ font-size: 1.2rem; }
+.postCard h3{ font-size: 1.05rem; }
+
+/* =========================
+   TOPIC CARDS - imagem + pastel
+   ========================= */
+.topicCard{
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  box-shadow:0 1px 3px rgba(0,0,0,.06);
 }
 
-.socialIcon:hover{
-  opacity: 1;
-  background: rgba(255,255,255,.08);
-  text-decoration:none;
+/* imagem do tema (bem leve) imagem de fundo controlada por variável*/
+.topicCard::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image: var(--topic-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: .14;
+  transform: scale(1.04);
 }
+
+
+
+
