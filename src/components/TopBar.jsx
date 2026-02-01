@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SocialLinks from "./SocialLinks.jsx";
 import TodayBadge from "./TodayBadge.jsx"; 
+import { Link } from "react-router-dom";
 
 export default function TopBar({ onMenu, onSearchSubmit, title, tagline }) {
     const [q, setQ] = useState("");
@@ -18,8 +19,10 @@ export default function TopBar({ onMenu, onSearchSubmit, title, tagline }) {
             </button>
 
             <div className="brand">
-                <div className="brandTitle">{title}</div>
-                <div className="brandTag">{tagline}</div>
+                <Link to="/" className="brandLink" aria-label="Voltar ao início">
+                    <div className="brandTitle">{title}</div>
+                    <div className="brandTag">{tagline}</div>
+                </Link>
             </div>
             <TodayBadge />
             <form className="topSearch" onSubmit={submit} role="search">

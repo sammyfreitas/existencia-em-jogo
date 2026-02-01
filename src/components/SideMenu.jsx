@@ -1,6 +1,21 @@
 import { Link } from "react-router-dom";
 
 export default function SideMenu({ open, onClose }) {
+  const itemsAtoZ = [
+    { label: "Astrologia", to: "/tema/astrologia" },
+    { label: "Autismo / Neurodivergência", to: "/tema/autismo" },
+    { label: "Cotidiano", to: "/tema/cotidiano" },
+    { label: "Cultura", to: "/tema/cultura" },
+    { label: "Engenharia / TI", to: "/tema/engenharia-ti" },
+    { label: "Esportes", to: "/tema/esportes" },
+    { label: "Futebol", to: "/tema/futebol" },
+    { label: "Gestão", to: "/tema/gestao" },
+    { label: "Namoro / Tinder", to: "/tema/namoro" },
+    { label: "Pets", to: "/tema/pets" },
+    { label: "Política", to: "/tema/politica" },
+    { label: "Religiosidade", to: "/tema/religiosidade" },
+    { label: "RJ", to: "/tema/rj" },
+  ].sort((a, b) => a.label.localeCompare(b.label, "pt-BR"));
   return (
     <div className={`sideWrap ${open ? "open" : ""}`} onClick={onClose}>
       <nav className="sideMenu" onClick={(e) => e.stopPropagation()}>
@@ -10,15 +25,20 @@ export default function SideMenu({ open, onClose }) {
             ✕
           </button>
         </div>
-
+        {/* 1) Início */}
         <Link to="/" onClick={onClose}>Início</Link>
-        <Link to="/tema/futebol" onClick={onClose}>Futebol</Link>
-        <Link to="/tema/brasileirao" onClick={onClose}>Tabela do Brasileirão</Link>
-        <Link to="/tema/esportes" onClick={onClose}>Esportes</Link>
-        <Link to="/tema/cotidiano" onClick={onClose}>Cotidiano</Link>
-        <Link to="/tema/cultura" onClick={onClose}>Cultura</Link>
-        <Link to="/tema/politica" onClick={onClose}>Política</Link>
-        <Link to="/tema/gestao" onClick={onClose}>Gestão</Link>
+         
+         {/* 2) Flamengo fixo */}
+        <Link to="/tema/flamengo" onClick={onClose}>Flamengo</Link>
+        <hr className="menuHr" />
+        {/* 3) Demais em ordem alfabética */}
+        {itemsAtoZ.map((it) => (
+          <Link key={it.to} to={it.to} onClick={onClose}>
+            {it.label}
+          </Link>
+        ))}
+       {/* 4) Sobre por último */}
+        <hr className="menuHr" />
         <Link to="/sobre" onClick={onClose}>Sobre</Link>
       </nav>
     </div>
