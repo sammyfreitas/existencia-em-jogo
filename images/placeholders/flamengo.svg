@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- fundo (estádio escuro) -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A12"/>
+      <stop offset="1" stop-color="#0B1020"/>
+    </linearGradient>
+
+    <!-- vermelho/preto -->
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EF233C"/>
+      <stop offset="1" stop-color="#B11226"/>
+    </linearGradient>
+
+    <!-- sombra de vinheta -->
+    <radialGradient id="vign" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".55"/>
+    </radialGradient>
+
+    <!-- “ondulação” (deslocamento) -->
+    <filter id="wave" x="-10%" y="-20%" width="120%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- grão (textura) -->
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="12" result="n"/>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 .12 0" />
+    </filter>
+
+    <!-- brilho suave -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- base -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- arquibancada “sombra” no topo -->
+  <path d="M0 0H1200V140C980 120 760 110 600 116C410 123 190 140 0 170Z"
+        fill="#0A0F1E" opacity=".85"/>
+
+  <!-- bandeira (faixas) -->
+  <g filter="url(#wave)">
+    <!-- bloco da bandeira -->
+    <rect x="-60" y="110" width="1320" height="380" rx="26" fill="#0B0F1A" opacity=".35"/>
+
+    <!-- listras rubro-negras (diagonais leves) -->
+    <g opacity=".98">
+      <path d="M-80 150H1280V210H-80Z" fill="#0A0A0A"/>
+      <path d="M-80 210H1280V270H-80Z" fill="url(#red)"/>
+      <path d="M-80 270H1280V330H-80Z" fill="#0A0A0A"/>
+      <path d="M-80 330H1280V390H-80Z" fill="url(#red)"/>
+      <path d="M-80 390H1280V450H-80Z" fill="#0A0A0A"/>
+    </g>
+
+    <!-- highlight “dobras” -->
+    <path d="M-80 170C220 120 420 145 600 170C760 192 980 210 1280 165V230C980 270 760 245 600 220C420 192 220 170 -80 230Z"
+          fill="#FFFFFF" opacity=".07"/>
+    <path d="M-80 420C220 470 420 450 600 430C760 408 980 390 1280 440V500H-80Z"
+          fill="#000000" opacity=".20"/>
+  </g>
+
+  <!-- textura por cima -->
+  <rect width="1200" height="630" filter="url(#grain)" opacity=".65"/>
+
+  <!-- vinheta -->
+  <rect width="1200" height="630" fill="url(#vign)"/>
+
+  <!-- “emblema” original (não é o CRF) -->
+  <g filter="url(#glow)" transform="translate(980 250)">
+    <circle r="78" fill="#0B1020" opacity=".70" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="6"/>
+    <circle r="64" fill="none" stroke="#EF233C" stroke-opacity=".65" stroke-width="6"/>
+    <!-- monograma genérico “F” -->
+    <path d="M-22 -36H24V-18H-4V-6H18V12H-4V36H-22Z" fill="#FFFFFF" opacity=".92"/>
+    <!-- estrelinha -->
+    <path d="M0 -105l10 22 24 2-18 16 6 24-22-12-22 12 6-24-18-16 24-2z"
+          fill="#F59E0B" opacity=".75"/>
+  </g>
+
+  <!-- títulos -->
+  <text x="80" y="545" fill="#E5E7EB" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="900" font-size="54">
+    Flamengo
+  </text>
+  <text x="80" y="590" fill="#A7B0C0" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="650" font-size="24">
+    placeholder • Existência em Jogo
+  </text>
+</svg>

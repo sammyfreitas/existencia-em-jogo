@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A12"/>
+      <stop offset="1" stop-color="#0B1020"/>
+    </linearGradient>
+
+    <radialGradient id="spot" cx="55%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#93C5FD" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1224" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#0A1020" stop-opacity=".92"/>
+    </linearGradient>
+
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="3"/>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 .12 0" />
+    </filter>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="cat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E5E7EB"/>
+      <stop offset="1" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#spot)"/>
+
+  <!-- cartão -->
+  <g transform="translate(120,110)">
+    <rect width="960" height="380" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="2"/>
+    <path d="M18 300C220 270 420 280 520 292C670 310 800 330 942 290V362H18Z" fill="#000" opacity=".22"/>
+  </g>
+
+  <!-- ícone pet -->
+  <g transform="translate(600,305)" filter="url(#glow)">
+    <!-- aura -->
+    <circle r="140" fill="#FFFFFF" opacity=".05"/>
+    <circle r="118" fill="none" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="2"/>
+
+    <!-- gato (silhueta friendly) -->
+    <g transform="translate(-40,10)">
+      <!-- orelhas -->
+      <path d="M-64 -70L-96 -116L-80 -38Z" fill="url(#cat)"/>
+      <path d="M64 -70L96 -116L80 -38Z" fill="url(#cat)"/>
+      <!-- cabeça -->
+      <circle cx="0" cy="-30" r="86" fill="url(#cat)"/>
+      <!-- olhos -->
+      <ellipse cx="-26" cy="-42" rx="10" ry="14" fill="#0B1020" opacity=".85"/>
+      <ellipse cx="26" cy="-42" rx="10" ry="14" fill="#0B1020" opacity=".85"/>
+      <!-- nariz -->
+      <path d="M0 -22l10 8-10 10-10-10z" fill="#FB7185" opacity=".9"/>
+      <!-- bigodes -->
+      <path d="M-50 -18H-98" stroke="#0B1020" stroke-opacity=".35" stroke-width="4" stroke-linecap="round"/>
+      <path d="M-48 -2H-102" stroke="#0B1020" stroke-opacity=".25" stroke-width="4" stroke-linecap="round"/>
+      <path d="M50 -18H98" stroke="#0B1020" stroke-opacity=".35" stroke-width="4" stroke-linecap="round"/>
+      <path d="M48 -2H102" stroke="#0B1020" stroke-opacity=".25" stroke-width="4" stroke-linecap="round"/>
+
+      <!-- coleira (acentinho) -->
+      <path d="M-62 22C-36 54 36 54 62 22" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="0" cy="54" r="10" fill="url(#accent)"/>
+    </g>
+
+    <!-- patinhas (fundo) -->
+    <g opacity=".9">
+      <g transform="translate(-210,90)">
+        <circle cx="-18" cy="-10" r="10" fill="#E5E7EB" opacity=".85"/>
+        <circle cx="0" cy="-18" r="10" fill="#E5E7EB" opacity=".85"/>
+        <circle cx="18" cy="-10" r="10" fill="#E5E7EB" opacity=".85"/>
+        <path d="M0 0c26 0 42 18 42 36S26 70 0 70-42 54-42 36-26 0 0 0z" fill="#E5E7EB" opacity=".75"/>
+      </g>
+
+      <g transform="translate(230,90)">
+        <circle cx="-18" cy="-10" r="10" fill="#E5E7EB" opacity=".85"/>
+        <circle cx="0" cy="-18" r="10" fill="#E5E7EB" opacity=".85"/>
+        <circle cx="18" cy="-10" r="10" fill="#E5E7EB" opacity=".85"/>
+        <path d="M0 0c26 0 42 18 42 36S26 70 0 70-42 54-42 36-26 0 0 0z" fill="#E5E7EB" opacity=".75"/>
+      </g>
+    </g>
+
+    <!-- detalhe “cão pequeno” (bem sutil, só pra representar outros pets) -->
+    <g transform="translate(210,-80)" opacity=".9">
+      <circle cx="0" cy="0" r="46" fill="none" stroke="#FFFFFF" stroke-opacity=".14" stroke-width="2"/>
+      <path d="M-22 10c0-14 10-24 22-24s22 10 22 24-10 24-22 24-22-10-22-24z" fill="#E5E7EB" opacity=".45"/>
+      <circle cx="-12" cy="6" r="5" fill="#0B1020" opacity=".6"/>
+      <circle cx="12" cy="6" r="5" fill="#0B1020" opacity=".6"/>
+      <path d="M0 14c8 0 10 8 0 12-10-4-8-12 0-12z" fill="#FB7185" opacity=".75"/>
+    </g>
+  </g>
+
+  <!-- textos -->
+  <text x="90" y="545" fill="#E5E7EB" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="900" font-size="54">
+    Pets
+  </text>
+  <text x="90" y="590" fill="#A7B0C0" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="650" font-size="24">
+    gatos • cães • companheiros
+  </text>
+
+  <rect width="1200" height="630" filter="url(#grain)" opacity=".65"/>
+</svg>

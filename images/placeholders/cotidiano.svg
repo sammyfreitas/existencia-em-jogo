@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#0F2A2E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="285" r="210" fill="#1C3B4A" opacity=".25"/>
+
+  <g filter="url(#glow)" transform="translate(600 280)">
+    <!-- mug -->
+    <rect x="-150" y="-70" width="240" height="200" rx="28" fill="url(#accent)" opacity=".95"/>
+    <rect x="-140" y="-55" width="220" height="170" rx="22" fill="#0B1020" opacity=".25"/>
+    <path d="M 90 -30 h 50 c 55 0 55 120 0 120 h -50" fill="none" stroke="#E5E7EB" stroke-opacity=".55" stroke-width="18" stroke-linecap="round"/>
+    <path d="M -80 -110 c -20 -30 20 -40 0 -70" fill="none" stroke="#E5E7EB" stroke-opacity=".45" stroke-width="12" stroke-linecap="round"/>
+    <path d="M -20 -120 c -20 -30 20 -40 0 -70" fill="none" stroke="#E5E7EB" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- clock -->
+    <circle cx="-230" cy="60" r="56" fill="#111827" opacity=".7" stroke="#E5E7EB" stroke-opacity=".35" stroke-width="6"/>
+    <path d="M -230 60 v -26" stroke="#E5E7EB" stroke-opacity=".75" stroke-width="8" stroke-linecap="round"/>
+    <path d="M -230 60 h 22" stroke="#E5E7EB" stroke-opacity=".75" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="560" fill="#E5E7EB" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="800" font-size="56" text-anchor="middle">Cotidiano</text>
+  <text x="600" y="600" fill="#A7B0C0" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="600" font-size="24" text-anchor="middle">placeholder • Existência em Jogo</text>
+</svg>
