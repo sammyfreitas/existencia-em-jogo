@@ -1,7 +1,7 @@
 # ✍️ Sintaxe da Existência — Site de Crônicas (React + Vite)
 Projeto autoral para publicar crônicas com humor, ironia e observações do cotidiano, com visual moderno e experiência fluida de leitura.
 
-🌐 **Demo:** https://sammyfreitas.github.io/NOME_DO_REPO/
+🌐 **Demo:** https://sammyfreitas.github.io/existencia-em-jogo/
 
 ---
 ## ✨ Funcionalidades
