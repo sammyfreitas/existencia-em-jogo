@@ -1,17 +1,4 @@
----
-title: "O Gol Que Veio Vestido de Verde"
-date: 2025-11-29
-categories: [futebol, flamengo]
-tags: [cronica]
-image: /assets/img/placeholder.jpg
-series: "O futebol que Me Move"
----
-
-O Gol Que Veio Vestido de Verde 
-
-Final da Libertadores da América 2025
-Flamengo 1×0 Palmeiras
-Estádio Monumental, Lima/Peru - 29/11/2025, 18h15
+# **O Gol Que Veio Vestido de Verde**
 
 Lima sempre teve algum presságio guardado para o Flamengo. E hoje, eu já estava num estado ritualístico: camisa 13, amendoim com cebola e salsa (verde!), caipirinha com Baly de maçã verde, tudo parecendo uma provocação cósmica.
 Eu, cercado de verde, esperando um milagre vermelho.

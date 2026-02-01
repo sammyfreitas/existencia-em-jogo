@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A12"/>
+      <stop offset="1" stop-color="#0B1020"/>
+    </linearGradient>
+
+    <radialGradient id="spot" cx="52%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#FB7185" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1224" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#0A1020" stop-opacity=".92"/>
+    </linearGradient>
+
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FB7185"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+
+    <linearGradient id="aqua" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="5"/>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 .12 0" />
+    </filter>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#spot)"/>
+
+  <g transform="translate(120,110)">
+    <rect width="960" height="380" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="2"/>
+    <path d="M18 292C220 260 420 272 520 285C670 305 800 326 942 282V362H18Z" fill="#000" opacity=".22"/>
+  </g>
+
+  <!-- Ícone central: dois "cards" de app + coração (tinder vibes sem logo) -->
+  <g transform="translate(600,305)" filter="url(#glow)">
+    <circle r="140" fill="#FFFFFF" opacity=".05"/>
+    <circle r="118" fill="none" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="2"/>
+
+    <!-- cards -->
+    <g transform="translate(-70,-35)">
+      <rect x="-80" y="-70" width="170" height="220" rx="24" fill="#111827" opacity=".75" stroke="#FFFFFF" stroke-opacity=".10" stroke-width="2"/>
+      <rect x="-55" y="-45" width="120" height="120" rx="18" fill="url(#aqua)" opacity=".22"/>
+      <path d="M-48 110H58" stroke="#E5E7EB" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
+      <path d="M-48 135H30" stroke="#E5E7EB" stroke-opacity=".22" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(70,-35)">
+      <rect x="-90" y="-70" width="170" height="220" rx="24" fill="#111827" opacity=".75" stroke="#FFFFFF" stroke-opacity=".10" stroke-width="2"/>
+      <rect x="-65" y="-45" width="120" height="120" rx="18" fill="url(#pink)" opacity=".20"/>
+      <path d="M-58 110H48" stroke="#E5E7EB" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
+      <path d="M-58 135H18" stroke="#E5E7EB" stroke-opacity=".22" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+    <!-- coração -->
+    <path d="M0 78
+             C-40 50 -56 24 -44 2
+             C-32 -18 -6 -18 0 0
+             C6 -18 32 -18 44 2
+             C56 24 40 50 0 78Z"
+          fill="url(#pink)" opacity=".95"/>
+  </g>
+
+  <text x="90" y="545" fill="#E5E7EB" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="900" font-size="54">
+    Namoro
+  </text>
+  <text x="90" y="590" fill="#A7B0C0" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="650" font-size="24">
+    encontros • crush • tinder vibes
+  </text>
+
+  <rect width="1200" height="630" filter="url(#grain)" opacity=".65"/>
+</svg>

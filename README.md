@@ -1,16 +1,46 @@
-# React + Vite
+# ✍️ Sintaxe da Existência — Site de Crônicas (React + Vite)
+Projeto autoral para publicar crônicas com humor, ironia e observações do cotidiano, com visual moderno e experiência fluida de leitura.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Demo:** https://sammyfreitas.github.io/NOME_DO_REPO/
 
-Currently, two official plugins are available:
+---
+## ✨ Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Listagem de crônicas com **título, data e resumo**
+- ✅ Página de leitura com **layout confortável** (boa tipografia e espaçamento)
+- ✅ Navegação por **categorias/tags** (ex.: cotidiano, crítica social, sobrenatural)
+- ✅ Busca por título/trecho (se aplicável)
+- ✅ Tema escuro e microinterações (hover, transições leves)
+- ✅ Publicação no **GitHub Pages**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧰 Tecnologias
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- React Router DOM
+- CSS (tema escuro, responsividade e micro animações)
+- GitHub Pages (build e deploy)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Preview
+
+> GIF do site funcionando:
+![Preview do projeto](./docs/preview.gif)
+
+---
+
+👤 Autor
+
+Anthony Freitas — escritor, engenheiro e professor (RJ) • 2026
+Projeto de crônicas com aplicação prática de front-end e organização de conteúdo.
+
+---
+
+## 🚀 Como rodar localmente
+
+### instalar dependências
+```bash
+npm install

@@ -1,18 +1,4 @@
----
-title: "COLONIZAÇÃO 2.0: OU COMO A FIFA INVENTOU A CARAVELA COM VAR"
-date: 2025-12-07
-categories: [futebol, flamengo]
-tags: [cronica]
-image: /assets/img/placeholder.jpg
-series: "O futebol que Me Move"
----
-
-COLONIZAÇÃO 2.0: OU COMO A FIFA INVENTOU A CARAVELA COM VAR
-
-
-Eu juro que tentei entender.
-Sentei no sofá, café na mão, gatos circulando como testemunhas oculares da minha indignação, e pensei:
-“Vamos lá, Anthony, a FIFA deve ter um motivo lógico.”
+# **COLONIZAÇÃO 2.0: OU COMO A FIFA INVENTOU A CARAVELA COM VAR**
 
 Não tem.
 É só sacanagem mesmo.

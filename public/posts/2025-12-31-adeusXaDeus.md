@@ -1,12 +1,4 @@
----
-title: "Adeus x A Deus"
-date: 2025-12-31
-categories: [cotidiano]
-tags: [cronica]
-image: /assets/img/placeholder.jpg
-series: "A vida que Me Move"
----
-Adeus, 2025. A Deus, 2026.
+# **Adeus x A Deus**
 
 Ao dizermos "adeus" a um ano que se encerra, entregamos a Deus tudo o que vivemos: as alegrias, os desafios, os aprendizados e as superações.
 

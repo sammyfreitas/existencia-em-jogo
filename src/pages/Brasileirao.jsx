@@ -1,15 +1,16 @@
-import BrasileiraoWidget from "/BrasileiraoWidget.jsx";
+import BrasileiraoWidget from "../components/BrasileiraoWidget.jsx";
 
 export default function Brasileirao() {
   return (
     <div className="page">
-      <section className="hero" style={{ marginBottom: 16 }}>
-        <div className="heroEyebrow">Esportes</div>
-        <h2>Brasileirão</h2>
-        <p>Tabela e rodadas em tela cheia.</p>
-      </section>
+      <h1>Brasileirão</h1>
+      <p className="muted" style={{ marginTop: 6 }}>
+        Tabela completa (widget).
+      </p>
 
-      <BrasileiraoWidget />
+      <div style={{ marginTop: 12 }}>
+        <BrasileiraoWidget mode="full" />
+      </div>
     </div>
   );
 }

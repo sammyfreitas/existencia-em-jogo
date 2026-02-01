@@ -1,15 +1,4 @@
----
-title: "Ascendente em Segredo"
-date: 2025-12-10
-categories: [cotidiano, namoro, astrologia]
-tags: [cronica]
-image: /assets/img/placeholder.jpg
-series: "A astrologia que Me Move"
----
-
-Ascendente em Segredo
-
-Ela acreditava em mapa astral como quem acredita em senha de wi-fi: sem aquilo, nada conectava direito.
+# **Ascendente em Segredo**
 
 Não era dessas místicas de guardar cristais no bolso (embora tivesse guardado um quartzo no fundo da bolsa “por via das dúvidas”). O negócio dela era método: data, local exato e, sobretudo, hora do nascimento. Só assim a sinastria se revelava completa — e os astros, honestos como são, diziam se o amor ia durar mais que um boleto atrasado.
 

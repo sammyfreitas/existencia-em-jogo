@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A12"/>
+      <stop offset="1" stop-color="#0B1020"/>
+    </linearGradient>
+
+    <radialGradient id="spot" cx="52%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1224" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#0A1020" stop-opacity=".92"/>
+    </linearGradient>
+
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="2"/>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 .12 0" />
+    </filter>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#spot)"/>
+
+  <g transform="translate(120,110)">
+    <rect width="960" height="380" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="2"/>
+    <path d="M18 300C220 270 420 280 520 292C670 310 800 330 942 290V362H18Z" fill="#000" opacity=".22"/>
+  </g>
+
+  <!-- Ícone central: ondas Copacabana + pão de açúcar + cristo minimal -->
+  <g transform="translate(600,305)" filter="url(#glow)">
+    <circle r="140" fill="#FFFFFF" opacity=".05"/>
+    <circle r="118" fill="none" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="2"/>
+
+    <!-- sol -->
+    <circle cx="-70" cy="-78" r="24" fill="url(#sun)" opacity=".95"/>
+
+    <!-- Pão de Açúcar (duas pedras) -->
+    <g opacity=".95">
+      <path d="M-10 60c0-70 46-118 102-118 54 0 92 38 92 104 0 56-42 104-104 104S-10 120-10 60z"
+            fill="#E5E7EB" opacity=".38"/>
+      <path d="M-170 78c0-56 34-96 78-96 42 0 68 30 68 84 0 46-30 84-78 84-42 0-68-26-68-72z"
+            fill="#E5E7EB" opacity=".28"/>
+    </g>
+
+    <!-- Cristo (minimalista) -->
+    <g transform="translate(-210,-30)" opacity=".9">
+      <circle cx="0" cy="-22" r="12" fill="#E5E7EB" opacity=".85"/>
+      <path d="M0 -10v54" stroke="#E5E7EB" stroke-opacity=".85" stroke-width="10" stroke-linecap="round"/>
+      <path d="M-38 8h76" stroke="#E5E7EB" stroke-opacity=".85" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+    <!-- Ondas Copacabana -->
+    <g transform="translate(0,92)">
+      <path d="M-210 0c44-26 88-26 132 0s88 26 132 0 88-26 132 0 88 26 132 0"
+            fill="none" stroke="url(#sea)" stroke-width="14" stroke-linecap="round" opacity=".95"/>
+      <path d="M-210 34c44-26 88-26 132 0s88 26 132 0 88-26 132 0 88 26 132 0"
+            fill="none" stroke="#E5E7EB" stroke-opacity=".18" stroke-width="14" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <text x="90" y="545" fill="#E5E7EB" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="900" font-size="54">
+    Rio de Janeiro
+  </text>
+  <text x="90" y="590" fill="#A7B0C0" font-family="system-ui,Segoe UI,Roboto,Arial" font-weight="650" font-size="24">
+    copacabana • pão de açúcar • cidade-luz
+  </text>
+
+  <rect width="1200" height="630" filter="url(#grain)" opacity=".65"/>
+</svg>

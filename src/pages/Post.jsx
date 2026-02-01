@@ -9,20 +9,49 @@ export default function Post({ posts }) {
 
   const [html, setHtml] = useState("");
 
-  useEffect(() => {
-    let alive = true;
-    async function run() {
-      if (!post) return;
+  // src/pages/Post.jsx (apenas o useEffect + helpers)
 
-      const url = `${import.meta.env.BASE_URL}${post.file}`;
+function stripFrontmatter(md) {
+  // remove bloco --- ... --- do início do arquivo
+  if (md.startsWith("---")) {
+    const end = md.indexOf("\n---", 3);
+    if (end !== -1) return md.slice(end + 4).trim();
+  }
+  return md;
+}
+
+useEffect(() => {
+  let alive = true;
+
+  async function run() {
+    if (!post) return;
+
+    const base = import.meta.env.BASE_URL; // "/existencia-em-jogo/"
+    const filePath = String(post.file || "").replace(/^\/+/, ""); // "posts/....md" (sem barra no começo)
+    const url = `${base}${filePath}`; // "/existencia-em-jogo/posts/....md"
+
+    try {
       const res = await fetch(url);
-      const md = await res.text();
+
+      if (!res.ok) {
+        throw new Error(`Falha ao carregar MD: ${res.status} ${res.statusText} (${url})`);
+      }
+
+      const mdRaw = await res.text();
+      const md = stripFrontmatter(mdRaw);
       const rendered = marked.parse(md);
+
       if (alive) setHtml(rendered);
+    } catch (err) {
+      console.error(err);
+      if (alive) setHtml(`<p><strong>Erro:</strong> não foi possível carregar esta crônica.</p>`);
     }
-    run();
-    return () => { alive = false; };
-  }, [post]);
+  }
+
+  run();
+  return () => { alive = false; };
+}, [post]);
+
 
   if (!post) {
     return (
